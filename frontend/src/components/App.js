@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Router, Route, Switch } from 'react-router-dom'
 
 // Importing the Bootstrap CSS
-// import 'bootstrap/dist/css/bootstrap.min.css'
+// import '/bootstrap/dist/css/bootstrap.min.css'
 
 import history from '../history'
 import Header from './layout/Header'
