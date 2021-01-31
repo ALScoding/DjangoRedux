@@ -1,1 +1,3 @@
-import App from './components/App';
+// frontend/src/index.js
+
+import App from './components/App'

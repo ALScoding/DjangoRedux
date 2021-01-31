@@ -1,13 +1,15 @@
+# frontend/views.py
+
 from django.shortcuts import render
 from django.views.generic.detail import DetailView
 
-from todos.models import Todo
+from studying.models import Flashcard
 
 
 def index(request):
     return render(request, 'frontend/index.html')
 
 
-class TodoDetailView(DetailView):
-    model = Todo
+class FlashcardDetailView(DetailView):
+    model = Flashcard
     template_name = 'frontend/index.html'

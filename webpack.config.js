@@ -1,3 +1,5 @@
+// webpack.config.js
+
 module.exports = {
   module: {
     rules: [
@@ -10,4 +12,4 @@ module.exports = {
       }
     ]
   }
-};
+}

@@ -1,5 +1,5 @@
 {
-  "name": "django-react-todo",
+  "name": "django-react-flashcard",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +20,13 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "lodash": "^4.17.19",
     "lodash-es": "^4.17.15",

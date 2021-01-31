@@ -1,5 +1,5 @@
-export const GET_TODOS = 'GET_TODOS';
-export const GET_TODO = 'GET_TODO';
-export const ADD_TODO = 'ADD_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
-export const EDIT_TODO = 'EDIT_TODO';
+export const GET_FLASHCARDS = 'GET_FLASHCARDS'
+export const GET_FLASHCARD = 'GET_FLASHCARD'
+export const ADD_FLASHCARD = 'ADD_FLASHCARD'
+export const DELETE_FLASHCARD = 'DELETE_FLASHCARD'
+export const EDIT_FLASHCARD = 'EDIT_FLASHCARD'
