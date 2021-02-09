@@ -35,11 +35,15 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {  # added
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.IsAuthenticated',
     ],
     'DATETIME_FORMAT': "%m/%d/%Y %H:%M:%S",
 }
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

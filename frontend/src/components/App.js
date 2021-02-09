@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, Switch } from 'react-router-dom'
 
-// Importing the Bootstrap CSS
-// import '/bootstrap/dist/css/bootstrap.min.css'
-
 import history from '../history'
 import Header from './layout/Header'
 import Dashboard from './flashcards/Dashboard'

@@ -1,4 +1,6 @@
 import React from 'react'
+import Login from './Login'
+import Signup from './SignUp'
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,8 +29,9 @@ class Header extends React.Component {
                 <Navbar.Collapse id='basic-navbar-nav'>
                   <Nav className='mr-auto'>
                     <Nav.Link href='/home'>Home</Nav.Link>
-                    <Nav.Link href='/contact-us'>CRUD</Nav.Link>
-                    <Nav.Link href='/about-us'>Study</Nav.Link>
+                    <Nav.Link href='/sign-in'>Sign-in</Nav.Link>
+                    <Nav.Link href='/sign-up'>Sign-up</Nav.Link>
+                    <Nav.Link href='/sign-out'>Sign-out</Nav.Link>
                     <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
                       <NavDropdown.Item href='#action/3.1'>
                         Action
@@ -57,9 +60,9 @@ class Header extends React.Component {
               </Navbar>
               <br />
               <Switch>
-                <Route exact path='/'></Route>
-                <Route path='/'></Route>
-                <Route path='/'></Route>
+                <Route path='/sign-in' component={Login}></Route>
+                <Route path='/sign-up' component={Signup}></Route>
+                <button onClick={this.handleLogout}>Sign-out</button>
               </Switch>
             </Router>
           </div>
