@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from './Login'
+import Login from '../../../../TBD/Login'
 import Signup from './SignUp'
 import {
   BrowserRouter as Router,
@@ -15,6 +15,10 @@ import {
   FormControl,
   Button
 } from 'react-bootstrap'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logout } from '../../actions/auth'
 
 class Header extends React.Component {
   render () {
@@ -29,9 +33,9 @@ class Header extends React.Component {
                 <Navbar.Collapse id='basic-navbar-nav'>
                   <Nav className='mr-auto'>
                     <Nav.Link href='/home'>Home</Nav.Link>
-                    <Nav.Link href='/sign-in'>Sign-in</Nav.Link>
-                    <Nav.Link href='/sign-up'>Sign-up</Nav.Link>
-                    <Nav.Link href='/sign-out'>Sign-out</Nav.Link>
+                    <Nav.Link href='/login'>Log-in</Nav.Link>
+                    <Nav.Link href='/logout'>Log-out</Nav.Link>
+                    <Nav.Link href='/register'>Sign-up</Nav.Link>
                     <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
                       <NavDropdown.Item href='#action/3.1'>
                         Action
