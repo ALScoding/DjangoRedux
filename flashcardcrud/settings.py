@@ -23,22 +23,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'frontend.apps.FrontendConfig',  # added
-    'studying.apps.FlashcardConfig',  # added
-    'rest_framework',  # added
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'frontend.apps.FrontendConfig',  # added
+    'studying.apps.FlashcardConfig',  # added
+    'rest_framework',  # added
 ]
 
 REST_FRAMEWORK = {  # added
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
-    # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
     'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DATETIME_FORMAT': "%m/%d/%Y %H:%M:%S",

@@ -1,6 +1,4 @@
-import React from 'react'
-import Login from '../../../../TBD/Login'
-import Signup from './SignUp'
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,9 +13,6 @@ import {
   FormControl,
   Button
 } from 'react-bootstrap'
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 import { logout } from '../../actions/auth'
 
 class Header extends React.Component {
@@ -63,11 +58,11 @@ class Header extends React.Component {
                 </Navbar.Collapse>
               </Navbar>
               <br />
-              <Switch>
+              {/* <Switch>
                 <Route path='/sign-in' component={Login}></Route>
                 <Route path='/sign-up' component={Signup}></Route>
                 <button onClick={this.handleLogout}>Sign-out</button>
-              </Switch>
+              </Switch> */}
             </Router>
           </div>
         </div>

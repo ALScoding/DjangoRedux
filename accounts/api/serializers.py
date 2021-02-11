@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 from rest_framework import serializers
 
-User._meta.get_field('email')._unique = True
+# User._meta.get_field('email')._unique = True
 
 
 class UserSerializer(serializers.ModelSerializer):
