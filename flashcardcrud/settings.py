@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'frontend.apps.FrontendConfig',  # added
     'studying.apps.FlashcardConfig',  # added
     'rest_framework',  # added
+    'knox' # added
 ]
 
 REST_FRAMEWORK = {  # added
@@ -39,7 +40,7 @@ REST_FRAMEWORK = {  # added
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DATETIME_FORMAT': "%m/%d/%Y %H:%M:%S",
