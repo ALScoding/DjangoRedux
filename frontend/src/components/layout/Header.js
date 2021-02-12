@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +13,6 @@ import {
   FormControl,
   Button
 } from 'react-bootstrap'
-import { logout } from '../../actions/auth'
 
 class Header extends React.Component {
   render () {
