@@ -21,9 +21,9 @@ class FlashcardEdit extends Component {
       <div className='ui container'>
         <h2 style={{ marginTop: '2rem' }}>Edit Flashcard</h2>
         <FlashcardForm
-          initialValues={_.pick(this.props.flashcard, 'frontside')}
-          initialValues={_.pick(this.props.flashcard, 'backside')}
-          initialValues={_.pick(this.props.flashcard, 'answer')}
+          initialValues={_.pick(this.props.frontside, 'frontside')}
+          initialValues={_.pick(this.props.backside, 'backside')}
+          initialValues={_.pick(this.props.answer, 'answer')}
           enableReinitialize={true}
           onSubmit={this.onSubmit}
         />
