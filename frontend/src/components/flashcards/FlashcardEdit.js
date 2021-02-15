@@ -17,13 +17,12 @@ class FlashcardEdit extends Component {
     // if (!this.props.flashcard) {
     //   return <div>Loading...</div>;
     // }
+    console.log(this.props.flashcard)
     return (
       <div className='ui container'>
         <h2 style={{ marginTop: '2rem' }}>Edit Flashcard</h2>
         <FlashcardForm
-          initialValues={_.pick(this.props.frontside, 'frontside')}
-          initialValues={_.pick(this.props.backside, 'backside')}
-          initialValues={_.pick(this.props.answer, 'answer')}
+          initialValues={this.props.flashcard}
           enableReinitialize={true}
           onSubmit={this.onSubmit}
         />

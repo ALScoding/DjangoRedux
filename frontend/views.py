@@ -13,3 +13,8 @@ def index(request):
 class FlashcardDetailView(DetailView):
     model = Flashcard
     template_name = 'frontend/index.html'
+
+class FlashcardDeleteView(DetailView):
+    model = Flashcard
+    template_name = 'frontend/index.html'
+    success_url = reverse_lazy('index')
