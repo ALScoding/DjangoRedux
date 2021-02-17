@@ -18,12 +18,10 @@ class FlashcardList extends Component {
         {this.props.flashcards.map(flashcard => (
           <div className='item' key={flashcard.id}>
             <div className='right floated content'>
-              <Link
-                to={`/delete/${flashcard.id}`}
+              <Button
                 className='small ui negative basic button'
-              >
-                Delete
-              </Link>
+                onClick={this.deleteFlashcard}
+              ></Button>
             </div>
             <div className='content'>
               <FontAwesomeIcon icon={faLanguage} />

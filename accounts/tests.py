@@ -1,3 +1,5 @@
+from frontend.views import FlashcardDeleteView
+from studying.models import Flashcard
 from django.http import response
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
@@ -25,3 +27,20 @@ class LogInTest(TestCase):
         # print(response.__dict__)
         assert response.status_code == 200
         assert response.data == {'user': {'id': 1, 'username': 'user', 'email': ''}, 'token': self.token.key}
+
+class FlashcardTest(TestCase):
+    def testDelete(self):
+        testcard = {
+            'frontside': 'two',
+            'backside': 'plus three',
+            'answer': 'five'
+        }
+        newTestCard = Flashcard.objects.create(**testcard)
+        # send login data
+        path = reverse('delete_flashcard', kwargs={'pk': newTestCard.pk})
+        print(newTestCard.answer)
+        request=RequestFactory().delete(path)
+        # should be logged in now
+        view=FlashcardDeleteView.as_view()
+        response=view(request)
+        assert response.status_code==204
