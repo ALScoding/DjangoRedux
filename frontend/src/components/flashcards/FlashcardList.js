@@ -5,7 +5,6 @@ import { getFlashcards, deleteFlashcard } from '../../actions/flashcards'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLanguage } from '@fortawesome/fontawesome-free-solid'
-import { fas } from '@fortawesome/free-solid-svg-icons'
 
 class FlashcardList extends Component {
   componentDidMount () {
@@ -18,10 +17,10 @@ class FlashcardList extends Component {
         {this.props.flashcards.map(flashcard => (
           <div className='item' key={flashcard.id}>
             <div className='right floated content'>
-              <Button
+              {/* <Button
                 className='small ui negative basic button'
                 onClick={this.deleteFlashcard}
-              ></Button>
+              ></Button> */}
             </div>
             <div className='content'>
               <FontAwesomeIcon icon={faLanguage} />

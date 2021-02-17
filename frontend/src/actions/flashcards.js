@@ -34,7 +34,7 @@ export const addFlashcard = formValues => async dispatch => {
     type: ADD_FLASHCARD,
     payload: res.data
   })
-  dispatch(reset('flashcardForm')) // フォーム送信後、値をクリアする
+  dispatch(reset('flashcardForm'))
 }
 
 // DELETE FLASHCARD

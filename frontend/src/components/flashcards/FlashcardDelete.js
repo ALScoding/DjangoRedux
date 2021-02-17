@@ -14,7 +14,7 @@ class FlashcardDelete extends Component {
     if (!this.props.flashcard) {
       return 'Are you sure you want to delete this card?'
     }
-    return `Are you sure you want to delete the card: ${this.props.flashcard}`
+    return `Are you sure you want to delete the card: ${this.props.flashcard.frontside}`
   }
 
   renderActions () {

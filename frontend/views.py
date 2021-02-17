@@ -26,7 +26,6 @@ class FlashcardDeleteView(APIView):
 
     def delete(self, request, *args, **kwargs):
         pk=kwargs.get('pk')
-        print(request.__dict__)
         flashcard = self.get_object(pk)
         flashcard.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
