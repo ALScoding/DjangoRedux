@@ -39,13 +39,34 @@ export const addFlashcard = formValues => async dispatch => {
 
 // DELETE FLASHCARD
 export const deleteFlashcard = id => async dispatch => {
-  await axios.delete(`/api/studying/${id}/`)
+  console.log('hellosjdfkjls')
+  await axios
+    .delete(`/api/studying/${id}/`)
+    .then(res => {
+      console.log('deletedkkkk;k' + res)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  console.log('yesyes')
   dispatch({
     type: DELETE_FLASHCARD,
     payload: id
   })
   history.push('/')
 }
+// export const deleteFlashcard = id => {
+//   console.log('this works')
+//   return async dispatch => {
+//     console.log('also works')
+//     await axios.delete(`/api/studying/${id}/`)
+//     dispatch({
+//       type: DELETE_FLASHCARD,
+//       payload: id
+//     })
+//     history.push('/')
+//   }
+// }
 
 // EDIT FLASHCARD
 export const editFlashcard = (id, formValues) => async dispatch => {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getFlashcards, deleteFlashcard } from '../../actions/flashcards'
-
+import { Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLanguage } from '@fortawesome/fontawesome-free-solid'
 
@@ -17,10 +17,13 @@ class FlashcardList extends Component {
         {this.props.flashcards.map(flashcard => (
           <div className='item' key={flashcard.id}>
             <div className='right floated content'>
-              {/* <Button
+              <Button
                 className='small ui negative basic button'
-                onClick={this.deleteFlashcard}
-              ></Button> */}
+                onClick={() => {
+                  console.log('helalefjakfjs')
+                  deleteFlashcard(flashcard.id)
+                }}
+              ></Button>
             </div>
             <div className='content'>
               <FontAwesomeIcon icon={faLanguage} />

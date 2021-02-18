@@ -25,6 +25,7 @@ class FlashcardDeleteView(APIView):
             raise Http404
 
     def delete(self, request, *args, **kwargs):
+        print('delete endpoint here')
         pk=kwargs.get('pk')
         flashcard = self.get_object(pk)
         flashcard.delete()
