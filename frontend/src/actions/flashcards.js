@@ -39,11 +39,10 @@ export const addFlashcard = formValues => async dispatch => {
 
 // DELETE FLASHCARD
 export const deleteFlashcard = id => async dispatch => {
-  console.log('hellosjdfkjls')
   await axios
     .delete(`/api/studying/${id}/`)
     .then(res => {
-      console.log('deletedkkkk;k' + res)
+      console.log('testing' + res)
     })
     .catch(error => {
       console.log(error)
