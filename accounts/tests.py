@@ -31,6 +31,12 @@ class LogInTest(TestCase):
         assert response.status_code == 200
         assert response.data == {'user': {'id': 1, 'username': 'user', 'email': ''}, 'token': self.token.key}
 
+# Testing ideas:
+# The email address is badly formatted
+# Password should be at least X characters
+# Email is already in use by another account
+# Sign out after signing in
+
 class FlashcardTest(TestCase):
     def setUp(self):
         testcard = {

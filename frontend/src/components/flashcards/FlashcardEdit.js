@@ -14,9 +14,9 @@ class FlashcardEdit extends Component {
   }
 
   render () {
-    // if (!this.props.flashcard) {
-    //   return <div>Loading...</div>;
-    // }
+    if (!this.props.flashcard) {
+      return <div>Loading...</div>
+    }
     console.log(this.props.flashcard)
     return (
       <div className='ui container'>

@@ -13,6 +13,13 @@ import {
   FormControl,
   Button
 } from 'react-bootstrap'
+import LoginForm from '../components/auth/LoginForm'
+import RegisterForm from '../components/auth/RegisterForm'
+
+// function mapStateToProps (state) {
+//   const { flashcards } = state
+//   return { flashcardList: flashcards.allIds }
+// }
 
 class Header extends React.Component {
   render () {
@@ -22,29 +29,13 @@ class Header extends React.Component {
           <div className='col-md-12'>
             <Router>
               <Navbar bg='dark' variant='dark' expand='lg' sticky='top'>
-                <Navbar.Brand href='#'>React Bootstrap Navbar</Navbar.Brand>
+                <Navbar.Brand href='#'>Flashcards App Navbar</Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav'>
                   <Nav className='mr-auto'>
-                    <Nav.Link href='/home'>Home</Nav.Link>
+                    <Nav.Link href='/'>Home</Nav.Link>
                     <Nav.Link href='/login'>Log-in</Nav.Link>
-                    <Nav.Link href='/logout'>Log-out</Nav.Link>
                     <Nav.Link href='/register'>Sign-up</Nav.Link>
-                    <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-                      <NavDropdown.Item href='#action/3.1'>
-                        Action
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href='#action/3.2'>
-                        Another action
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href='#action/3.3'>
-                        Something
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href='#action/3.4'>
-                        Separated link
-                      </NavDropdown.Item>
-                    </NavDropdown>
                   </Nav>
                   <Form inline>
                     <FormControl
@@ -57,11 +48,11 @@ class Header extends React.Component {
                 </Navbar.Collapse>
               </Navbar>
               <br />
-              {/* <Switch>
-                <Route path='/sign-in' component={Login}></Route>
-                <Route path='/sign-up' component={Signup}></Route>
-                <button onClick={this.handleLogout}>Sign-out</button>
-              </Switch> */}
+              <Switch>
+                <Route path='/login' component={LoginForm}></Route>
+                <Route path='/register' component={RegisterForm}></Route>
+                <button onClick={this.handleLogout}>Log-out</button>
+              </Switch>
             </Router>
           </div>
         </div>

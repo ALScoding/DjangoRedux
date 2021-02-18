@@ -61,7 +61,7 @@ class LoginForm extends Component {
             <button className='ui primary button'>Login</button>
           </form>
           <p style={{ marginTop: '1rem' }}>
-            Don't have an account? <Link to='/register'>Register</Link>
+            Don't have an account yet? <Link to='/register'>Register</Link>
           </p>
         </div>
       </div>

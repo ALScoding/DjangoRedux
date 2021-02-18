@@ -17,12 +17,19 @@ class FlashcardDelete extends Component {
     return `Are you sure you want to delete the card: ${this.props.flashcard.frontside}`
   }
 
+  // onDelete = id => {
+  //   console.log(id)
+  //   console.log(this.props)
+  //   this.props.deleteFlashcard(id)
+  // }
+
   renderActions () {
     const { id } = this.props.match.params
     return (
       <Fragment>
         <button
-          onClick={() => this.props.deleteFlashcard(id)}
+          id='delete'
+          onClick={this.onDelete}
           className='ui negative button'
         >
           Delete

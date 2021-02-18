@@ -11,6 +11,12 @@ class FlashcardList extends Component {
     this.props.getFlashcards()
   }
 
+  // onDelete = id => {
+  //   console.log(id)
+  //   console.log(this.props)
+  //   this.props.deleteFlashcard(id)
+  // }
+
   render () {
     return (
       <div className='ui relaxed divided list' style={{ marginTop: '2rem' }}>
@@ -21,9 +27,11 @@ class FlashcardList extends Component {
                 className='small ui negative basic button'
                 onClick={() => {
                   console.log('helalefjakfjs')
-                  deleteFlashcard(flashcard.id)
+                  this.props.deleteFlashcard(flashcard.id)
                 }}
-              ></Button>
+              >
+                Delete
+              </Button>
             </div>
             <div className='content'>
               <FontAwesomeIcon icon={faLanguage} />
