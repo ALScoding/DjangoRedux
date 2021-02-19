@@ -1,9 +1,8 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
-
+from django.contrib.auth import logout
 
 class UserAPIView(generics.RetrieveAPIView):
     permission_classes = [
@@ -41,3 +40,8 @@ class LoginAPIView(generics.GenericAPIView):
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": str(token.key)
         })
+
+class LogoutAPIView(generics.GenericAPIView):
+    def post(self, request, *args, **kwargs):
+        logout(request)
+        return Response(data = {'success': 'successfully logged out'}, status=status.HTTP_200_OK)
