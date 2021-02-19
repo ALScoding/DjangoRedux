@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Header from '../components/layout/Header'
-import Modal from '../components/layout/Modal'
 import LoginForm from '../components/auth/LoginForm'
 import RegisterForm from '../components/auth/RegisterForm'
 import FlashcardCreate from '../components/flashcards/FlashcardCreate'
@@ -46,17 +45,12 @@ describe('Navigation bar', () => {
   it('Navigation component renders without crashing', () => {
     ReactDOM.render(
       <Router>
-        <Header />
+        <Provider store={store}>
+          <Header />
+        </Provider>
       </Router>,
       div
     )
-  })
-})
-
-describe('Modal', () => {
-  // the test should pass
-  it('Modal component renders without crashing', () => {
-    ReactDOM.render(<Modal />, div)
   })
 })
 
@@ -72,17 +66,17 @@ describe('Flashcard Creating Component', () => {
   })
 })
 
-// describe('Flashcard Editing Component', () => {
-//   // the test should pass
-//   it('FlashcardEdit component renders without crashing', () => {
-//     ReactDOM.render(
-//       <Provider store={store}>
-//         <FlashcardEdit />
-//       </Provider>,
-//       div
-//     )
-//   })
-// })
+describe('Flashcard Editing Component', () => {
+  // the test should pass
+  it('FlashcardEdit component renders without crashing', () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <FlashcardEdit />
+      </Provider>,
+      div
+    )
+  })
+})
 
 describe('Flashcard List Component', () => {
   // the test should pass
