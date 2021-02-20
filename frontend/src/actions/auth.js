@@ -83,6 +83,7 @@ export const login = ({ username, password }) => async dispatch => {
 
 // LOGOUT USER
 export const logout = () => async (dispatch, getState) => {
+  console.log('logout test')
   await axios.post('/api/auth/logout', null, tokenConfig(getState))
   dispatch({
     type: LOGOUT_SUCCESS

@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
 import { logout } from '../../actions/auth'
 
@@ -9,7 +8,7 @@ class Header extends React.Component {
   NavigationAuth = () => (
     <Nav className='mr-auto'>
       <Link to='/'>Home</Link>
-      {/* <Link to='/' { logout } >Log-out</Link> */}
+      <button onClick={logout}>Logout</button>
     </Nav>
   )
 

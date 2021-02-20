@@ -39,13 +39,12 @@ export const addFlashcard = formValues => async dispatch => {
 
 // DELETE FLASHCARD
 export const deleteFlashcard = id => async dispatch => {
-  console.log('is it entering delete flash action')
   try {
     await axios.delete(`/api/studying/${id}/`)
   } catch (e) {
     console.log(e)
   }
-  console.log('yesyes')
+  alert('Flashcard was deleted successfully.')
   dispatch({
     type: DELETE_FLASHCARD,
     payload: id

@@ -26,7 +26,6 @@ class FlashcardList extends Component {
               <Button
                 className='small ui negative basic button'
                 onClick={() => {
-                  console.log('helalefjakfjs')
                   this.props.deleteFlashcard(flashcard.id)
                 }}
               >

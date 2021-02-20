@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom'
 import Header from '../components/layout/Header'
 import LoginForm from '../components/auth/LoginForm'
 import RegisterForm from '../components/auth/RegisterForm'
-import FlashcardCreate from '../components/flashcards/FlashcardCreate'
 import FlashcardEdit from '../components/flashcards/FlashcardEdit'
+import FlashcardDelete from '../components/flashcards/FlashcardDelete'
+import FlashcardCreate from '../components/flashcards/FlashcardCreate'
 import FlashcardList from '../components/flashcards/FlashcardList'
+import Dashboard from '../components/flashcards/Dashboard'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from '../store'
@@ -66,6 +68,18 @@ describe('Flashcard Creating Component', () => {
   })
 })
 
+describe('Flashcard Deleting Component', () => {
+  // the test should pass
+  it('FlashcardDelete component renders without crashing', () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <FlashcardDelete />
+      </Provider>,
+      div
+    )
+  })
+})
+
 describe('Flashcard Editing Component', () => {
   // the test should pass
   it('FlashcardEdit component renders without crashing', () => {
@@ -89,12 +103,15 @@ describe('Flashcard List Component', () => {
     )
   })
 })
-//   // the test should pass
-//   it('Navigation Non-Auth component renders without crashing', () => {
-//     ReactDOM.render(
-//       <Router>
-//         <NavigationNonAuth />
-//       </Router>,
-//       div
-//     )
-//   })
+
+describe('Dashboard Component', () => {
+  // the test should pass
+  it('Dashboard component renders without crashing', () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <Dashboard />
+      </Provider>,
+      div
+    )
+  })
+})

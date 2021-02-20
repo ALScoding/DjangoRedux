@@ -10,6 +10,9 @@ from django.test import Client
 from rest_framework.test import APIRequestFactory
 from studying.api.views import FlashcardViewSet
 
+# use print(response.__dict__)
+# after response during a failed test
+
 # Create your tests here.
 class LogInTest(TestCase):
     def setUp(self):
@@ -27,7 +30,6 @@ class LogInTest(TestCase):
         # should be logged in now
         view=LoginAPIView.as_view()
         response=view(request)
-        # print(response.__dict__)
         assert response.status_code == 200
         assert response.data == {'user': {'id': 1, 'username': 'user', 'email': ''}, 'token': self.token.key}
 
@@ -87,11 +89,11 @@ class FlashcardTest(TestCase):
             'answer': 'five'
         }
         self.newTestCard = Flashcard.objects.create(**testcard)
-    def testCreateFail(self):
+    def testCreateFail1(self):
         data = {
             'frontside': '1234567890123456789012345',
-            'backside': '1234567890123456789012345',
-            'answer': '123456789012345678901234567890123456789012345'
+            'backside': 'backside',
+            'answer': 'answer'
         }
         path = '/api/studying/'
         request = APIRequestFactory().post(path, data)
@@ -99,21 +101,45 @@ class FlashcardTest(TestCase):
         response=view(request)
         assert response.exception == True
         assert response.data['frontside'] is not None
-        assert response.data['backside'] is not None
-        assert response.data['answer'] is not None
         assert response.status_code == 400
-    def testCreate(self):
+    def testCreateFail2(self):
         data2 = {
-            'frontside': 'three',
-            'backside': 'minus three',
-            'answer': 'eight'
+            'frontside': 'frontside',
+            'backside': '1234567890123456789012345',
+            'answer': 'answer'
         }
         path = '/api/studying/'
         request = APIRequestFactory().post(path, data2)
         view = FlashcardViewSet.as_view({'post': 'create'})
         response=view(request)
-        assert response.data['frontside'] == data2['frontside']
-        assert response.data['answer'] == data2['answer']
+        assert response.exception == True
+        assert response.data['backside'] is not None
+        assert response.status_code == 400
+    def testCreateFail3(self):
+        data3 = {
+            'frontside': 'frontside',
+            'backside': 'backside',
+            'answer': '123456789012345678901234567890123456789012345'
+        }
+        path = '/api/studying/'
+        request = APIRequestFactory().post(path, data3)
+        view = FlashcardViewSet.as_view({'post': 'create'})
+        response=view(request)
+        assert response.exception == True
+        assert response.data['answer'] is not None
+        assert response.status_code == 400
+    def testCreate(self):
+        data4 = {
+            'frontside': 'three',
+            'backside': 'minus three',
+            'answer': 'eight'
+        }
+        path = '/api/studying/'
+        request = APIRequestFactory().post(path, data4)
+        view = FlashcardViewSet.as_view({'post': 'create'})
+        response=view(request)
+        assert response.data['frontside'] == data4['frontside']
+        assert response.data['answer'] == data4['answer']
         assert response.status_code == 201
     def testRead(self):
         kwargs={'pk': self.newTestCard.pk}
