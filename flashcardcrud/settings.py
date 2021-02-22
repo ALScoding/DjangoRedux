@@ -18,7 +18,7 @@ SECRET_KEY = 'ame^!skljy&q!ek7)%*h+6c6v@cfm)z-20+mrt$=*51b5m0l2@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flashcardcruddjango.herokuapp.com']
 
 
 # Application definition
