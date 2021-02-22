@@ -216,3 +216,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# StaticFiles 
+staticfiles/
