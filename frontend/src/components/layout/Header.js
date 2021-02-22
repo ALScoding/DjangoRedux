@@ -7,16 +7,17 @@ import { logout } from '../../actions/auth'
 class Header extends React.Component {
   NavigationAuth = () => (
     <Nav className='mr-auto'>
-      <Link to='/'>Home</Link>
-      <button onClick={logout}>Logout</button>
+      <Nav.Link href='/'>Home</Nav.Link>
+      <Nav.Link href='/'>Log-out</Nav.Link>
+      {/* <button onClick={logout}>Logout</button> */}
     </Nav>
   )
 
   NavigationNonAuth = () => (
     <Nav className='mr-auto'>
-      <Link to='/'>Home</Link>
-      <Link to='/login'>Log-in</Link>
-      <Link to='/register'>Sign-up</Link>
+      <Nav.Link href='/'>Home</Nav.Link>
+      <Nav.Link href='/login'>Log-in</Nav.Link>
+      <Nav.Link href='/register'>Sign-up</Nav.Link>
     </Nav>
   )
 
